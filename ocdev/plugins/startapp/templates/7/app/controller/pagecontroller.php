@@ -6,6 +6,7 @@ namespace OCA\{{ app.namespace }}\Controller;
 
 use \OCP\IRequest;
 use \OCP\AppFramework\Http\TemplateResponse;
+use \OCP\AppFramework\Http\JSONResponse;
 use \OCP\AppFramework\Controller;
 
 class PageController extends Controller {
@@ -39,7 +40,7 @@ class PageController extends Controller {
      * @NoAdminRequired
      */
     public function doEcho($echo) {
-        return array('echo' => $echo);
+        return new JSONResponse(array('echo' => $echo));
     }
 
 
